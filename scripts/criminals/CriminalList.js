@@ -4,7 +4,7 @@ import { useCriminals, getCriminals } from "./CriminalProvider.js";
 export const CriminalList = () => {
   getCriminals().then(() => {
     const criminalArray = useCriminals();
-    console.log("criminal array: ", criminalArray);
+    // console.log("criminal array: ", criminalArray);
     addCriminalToDom(criminalArray);
   });
 };
@@ -16,7 +16,7 @@ const addCriminalToDom = (aCriminalArray) => {
     return CriminalHTML(singleCriminal);
   });
 
-  console.log("html array of criminals= ", HTMLArray);
+  //   console.log("html array of criminals= ", HTMLArray);
 
   domElemenet.innerHTML = HTMLArray.join("");
 };
