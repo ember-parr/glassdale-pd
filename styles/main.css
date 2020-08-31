@@ -1,0 +1,19 @@
+.criminalsContainer {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1em;
+}
+
+.card-criminal {
+  border: 0.5px solid lightcoral;
+  margin: 0.5em;
+  padding: 0.5em;
+  min-width: 175px;
+  height: auto;
+  flex-shrink: 1;
+}
+
+.card-criminal p {
+  font-size: 12px;
+  line-height: 0.25;
+}
