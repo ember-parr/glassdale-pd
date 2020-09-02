@@ -22,8 +22,10 @@ const addCriminalToDom = (aCriminalArray) => {
 };
 
 const eventHub = document.querySelector(".container");
+let crimeThatWasSelected;
 
 eventHub.addEventListener("crimeChosen", (event) => {
+  crimeThatWasSelected = event.detail.crimeThatWasChosen;
   if (event.detail.crimeThatWasChosen !== "0") {
     const matchingCriminals = criminalArray.filter((currentCriminal) => {
       return currentCriminal.conviction === event.detail.crimeThatWasChosen;
@@ -36,7 +38,9 @@ eventHub.addEventListener("officerChosen", (event) => {
   if (event.detail.officerThatWasChosen !== "0") {
     const matchingCriminals = criminalArray.filter((currentCriminal) => {
       return (
-        currentCriminal.arrestingOfficer === event.detail.officerThatWasChosen
+        currentCriminal.arrestingOfficer ===
+          event.detail.officerThatWasChosen &&
+        currentCriminal.conviction === crimeThatWasSelected
       );
     });
     addCriminalToDom(matchingCriminals);
