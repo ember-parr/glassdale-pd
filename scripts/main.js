@@ -6,4 +6,4 @@ import { CrimesList } from "./convictions/ConvictionSelect.js";
 const elementPicker = document.querySelector("#listOfConvictions");
 
 CriminalList();
-elementPicker.innerHTML += CrimesList();
+CrimesList();
