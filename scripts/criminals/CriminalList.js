@@ -1,9 +1,11 @@
 import { CriminalHTML } from "./Criminals.js";
 import { useCriminals, getCriminals } from "./CriminalProvider.js";
 
+let criminalArray = [];
+
 export const CriminalList = () => {
   getCriminals().then(() => {
-    const criminalArray = useCriminals();
+    criminalArray = useCriminals();
     // console.log("criminal array: ", criminalArray);
     addCriminalToDom(criminalArray);
   });
@@ -16,7 +18,16 @@ const addCriminalToDom = (aCriminalArray) => {
     return CriminalHTML(singleCriminal);
   });
 
-  //   console.log("html array of criminals= ", HTMLArray);
-
   domElemenet.innerHTML = HTMLArray.join("");
 };
+
+const eventHub = document.querySelector(".container");
+
+eventHub.addEventListener("crimeChosen", (event) => {
+  if (event.detail.crimeThatWasChosen !== "0") {
+    const matchingCriminals = criminalArray.filter((currentCriminal) => {
+      return currentCriminal.conviction === event.detail.crimeThatWasChosen;
+    });
+    addCriminalToDom(matchingCriminals);
+  }
+});
