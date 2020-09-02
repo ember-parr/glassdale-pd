@@ -52,7 +52,7 @@ eventHub.addEventListener("change", (event) => {
         crimeThatWasChosen: event.target.value,
       },
     });
-    console.log(customEvent.detail.crimeThatWasChosen);
+    console.log("crime chosen: ", customEvent.detail.crimeThatWasChosen);
     eventHub.dispatchEvent(customEvent);
   }
 });

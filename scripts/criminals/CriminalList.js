@@ -31,3 +31,14 @@ eventHub.addEventListener("crimeChosen", (event) => {
     addCriminalToDom(matchingCriminals);
   }
 });
+
+eventHub.addEventListener("officerChosen", (event) => {
+  if (event.detail.officerThatWasChosen !== "0") {
+    const matchingCriminals = criminalArray.filter((currentCriminal) => {
+      return (
+        currentCriminal.arrestingOfficer === event.detail.officerThatWasChosen
+      );
+    });
+    addCriminalToDom(matchingCriminals);
+  }
+});
