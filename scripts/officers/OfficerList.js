@@ -1,4 +1,3 @@
-// import { OfficerHTML } from "./Officer.js";
 import { useOfficers, getOfficers } from "./OfficerProvider.js";
 
 // export const OfficerList = () => {
