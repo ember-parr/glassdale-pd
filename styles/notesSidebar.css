@@ -47,3 +47,7 @@ aside {
 .suspect {
   color: white;
 }
+
+#asideForNotes {
+  margin-bottom: 1em;
+}
