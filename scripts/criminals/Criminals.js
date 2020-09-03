@@ -11,6 +11,7 @@ export const CriminalHTML = (criminalObj) => {
           criminalObj.incarceration.end
         ).toLocaleDateString("en-US")}</p>
         <p>Arresting Officer: ${criminalObj.arrestingOfficer}</p>
+        <button id="associates--${criminalObj.id}">Associate Alibis</button>
     </section>
     `;
 };
