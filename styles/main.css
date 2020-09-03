@@ -17,3 +17,31 @@
   font-size: 12px;
   line-height: 0.25;
 }
+
+.notesList {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1em;
+}
+
+.listOfNotes {
+  border: 0.5px solid lightsteelblue;
+  margin: 0.25em;
+  padding: 0.25em;
+  min-width: 175px;
+  height: auto;
+  flex-shrink: 1;
+}
+
+.listOfNotes p {
+  font-size: 12px;
+  line-height: 0.33;
+}
+
+.caption {
+  font-size: 10px;
+}
+
+.suspect {
+  color: grey;
+}
