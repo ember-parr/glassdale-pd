@@ -1,4 +1,5 @@
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
+import { saveNote } from "./NoteProvider.js";
 
 /*
 A bunch of input boxes related to the note information 
@@ -11,11 +12,19 @@ eventHub.addEventListener("click", (clickEvent) => {
     const noteContent = document.querySelector("#noteForm--text");
     const noteCriminal = document.querySelector("#noteForm--criminal");
 
-    const newNote = {
-      noteText: noteContent.value,
-      suspect: noteCriminal.value,
-      date: Date.now(),
-    };
+    if (noteCriminal.value === "0") {
+      window.alert("please select a suspect");
+    } else if (noteContent.value === "") {
+      window.alert("please enter a note");
+    } else {
+      const newNote = {
+        noteText: noteContent.value,
+        suspect: noteCriminal.value,
+        date: Date.now(),
+      };
+
+      saveNote(newNote);
+    }
   }
 });
 
