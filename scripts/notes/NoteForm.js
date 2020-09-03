@@ -12,6 +12,10 @@ eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "saveNote") {
     const noteContent = document.querySelector("#noteForm--text");
     const noteCriminal = document.querySelector("#noteForm--criminal");
+    const clearNotesForm = () => {
+      noteContent.value = "";
+      noteCriminal.value = "0";
+    };
 
     if (noteCriminal.value === "0") {
       window.alert("please select a suspect");
@@ -23,7 +27,7 @@ eventHub.addEventListener("click", (clickEvent) => {
         suspect: noteCriminal.value,
         date: Date.now(),
       };
-
+      clearNotesForm();
       saveNote(newNote);
     }
     NotesList();
