@@ -35,9 +35,10 @@ const render = (criminalArray) => {
   });
   const sortedArray = criminalNames.sort();
   contentTarget.innerHTML = `
+    <hr>
+    <section class="noteFormContainer">
         <h3>Add A New Note: </h3>
         <form>
-        <label for="noteForm--text">Note Info:</label><br>
         <textarea id="noteForm--text" placeholder="Type Here"></textarea><br>
         <select class="dropdown" id="noteForm--criminal">
                 <option value="0">Please select a criminal</option>
@@ -52,6 +53,8 @@ const render = (criminalArray) => {
         </form>
 
         <button id="saveNote">Save Note</button>
+        </section>
+        <hr>
     `;
 };
 

@@ -1,3 +1,16 @@
+.filters {
+  display: flex;
+  flex-flow: row;
+}
+
+.filters__crime {
+  padding: 1.5em;
+}
+
+.filters__officer {
+  padding: 1.5em;
+}
+
 .criminalsContainer {
   display: flex;
   flex-flow: row wrap;
@@ -24,7 +37,7 @@
   margin: 1em;
 }
 
-.listOfNotes {
+.card-note {
   border: 0.5px solid lightsteelblue;
   margin: 0.25em;
   padding: 0.25em;
@@ -33,7 +46,7 @@
   flex-shrink: 1;
 }
 
-.listOfNotes p {
+.card-note p {
   font-size: 12px;
   line-height: 0.33;
 }
@@ -44,4 +57,25 @@
 
 .suspect {
   color: grey;
+}
+
+.noteFormContainer {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#noteFormContainer h3 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#noteForm--text {
+}
+
+.noteFormContainer #noteForm--criminal,
+#noteForm--text,
+#saveNote {
+  margin: 0.25em;
 }
