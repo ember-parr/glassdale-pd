@@ -1,5 +1,6 @@
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
-import { saveNote } from "./NoteProvider.js";
+import { saveNote, getNotes } from "./NoteProvider.js";
+import { NotesList } from "./NoteList.js";
 
 /*
 A bunch of input boxes related to the note information 
@@ -25,6 +26,7 @@ eventHub.addEventListener("click", (clickEvent) => {
 
       saveNote(newNote);
     }
+    NotesList();
   }
 });
 
