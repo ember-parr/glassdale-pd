@@ -1,0 +1,26 @@
+.criminalsContainer {
+  flex: 3;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1em;
+  justify-content: space-between;
+}
+
+.card-note {
+  margin: 0.25;
+}
+
+.card-criminal {
+  border: 0.5px solid lightcoral;
+  margin: 0.5em;
+  padding: 0.25em;
+  min-width: 175px;
+  height: auto;
+  flex-basis: 25%;
+}
+
+.card-criminal p {
+  font-size: 12px;
+  line-height: 1;
+  margin: 0.01;
+}

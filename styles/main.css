@@ -1,19 +1,41 @@
-.criminalsContainer {
+@import "notesSidebar.css";
+@import "criminals.css";
+
+.filters {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row;
+}
+
+.filters__crime {
+  padding: 1.5em;
+}
+
+.filters__officer {
+  padding: 1.5em;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 1em; */
+  flex-basis: 5;
+}
+
+.section-main {
+  display: flex;
+  flex-wrap: wrap;
   margin: 1em;
+  flex-basis: 5;
 }
 
-.card-criminal {
-  border: 0.5px solid lightcoral;
-  margin: 0.5em;
-  padding: 0.5em;
-  min-width: 175px;
-  height: auto;
-  flex-shrink: 1;
-}
+/* .dropdown-menu {
+  flex: 3;
+  display: flex;
+  margin: 1em;
+} */
 
-.card-criminal p {
-  font-size: 12px;
-  line-height: 0.25;
+header {
+  display: flex;
+  flex-basis: 100%;
+  flex-flow: row wrap;
 }

@@ -1,10 +1,11 @@
 import { CriminalList } from "./criminals/CriminalList.js";
 import { OfficersList } from "./officers/OfficerList.js";
-
 import { CrimesList } from "./convictions/ConvictionSelect.js";
-
-const elementPicker = document.querySelector("#listOfConvictions");
+import { NoteForm } from "./notes/NoteForm.js";
+import { NotesList } from "./notes/NoteList.js";
 
 CriminalList();
 CrimesList();
 OfficersList();
+NoteForm();
+NotesList();
