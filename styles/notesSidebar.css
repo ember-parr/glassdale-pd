@@ -1,0 +1,49 @@
+#noteFormContainer h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#noteForm--text {
+  flex-grow: 1;
+}
+
+.noteFormContainer #noteForm--criminal,
+#noteForm--text,
+#saveNote {
+  margin: 0.25em;
+}
+
+aside {
+  flex: 1;
+  background-color: darkcyan;
+  color: black;
+  padding: 1em;
+}
+
+.notesList {
+  display: flex;
+  flex-flow: row wrap;
+  /* margin: 0.25em; */
+}
+
+.card-note {
+  border: 0.5px solid lightsteelblue;
+  margin: 0.1;
+  padding: 0.25em;
+  width: 100%;
+  height: auto;
+  flex-shrink: 1;
+}
+
+.card-note p {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.caption {
+  font-size: 10px;
+}
+
+.suspect {
+  color: white;
+}
