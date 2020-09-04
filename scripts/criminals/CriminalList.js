@@ -1,4 +1,4 @@
-import { CriminalHTML } from "./Criminals.js";
+import { CriminalHTML, CriminalAlibiHTML } from "./Criminals.js";
 import { useCriminals, getCriminals } from "./CriminalProvider.js";
 
 let criminalArray = [];
@@ -11,16 +11,27 @@ export const CriminalList = () => {
   });
 };
 
+//add all the criminals to the dom
 const addCriminalToDom = (aCriminalArray) => {
   const domElemenet = document.querySelector(".criminalsContainer");
-
   let HTMLArray = aCriminalArray.map((singleCriminal) => {
     return CriminalHTML(singleCriminal);
   });
-
   domElemenet.innerHTML = HTMLArray.join("");
 };
 
+//add alibi to their card
+const addAlibiToDom = (knownAssociates, id) => {
+  const placeOnDom = document.getElementById("knownAssociates--" + id);
+  const theButton = document.getElementById("associates--" + id);
+  let HTMLArray = knownAssociates.map((singleAssociate) => {
+    return CriminalAlibiHTML(singleAssociate);
+  });
+  placeOnDom.innerHTML = HTMLArray.join("");
+  theButton.style.display = "none";
+};
+
+//start of event hubs
 const eventHub = document.querySelector(".container");
 let crimeThatWasSelected;
 
@@ -30,6 +41,7 @@ eventHub.addEventListener("crimeChosen", (event) => {
     const matchingCriminals = criminalArray.filter((currentCriminal) => {
       return currentCriminal.conviction === event.detail.crimeThatWasChosen;
     });
+    console.log("Matching Criminals: ", matchingCriminals);
     addCriminalToDom(matchingCriminals);
   }
 });
@@ -45,4 +57,21 @@ eventHub.addEventListener("officerChosen", (event) => {
     });
     addCriminalToDom(matchingCriminals);
   }
+});
+
+// show the damn known associates!
+let found = [];
+let foundAssociates = [];
+let idToLocate;
+eventHub.addEventListener("click", (event) => {
+  if ((event.target.class = "knownAssociatesBtn")) {
+    const [prefix, criminalId] = event.target.id.split("--");
+    found = criminalArray.find((criminal) => criminal.id == criminalId);
+    foundAssociates = found.known_associates;
+    idToLocate = found.id;
+    console.table(found.known_associates);
+  } else {
+    console.log("this isn't working....");
+  }
+  addAlibiToDom(foundAssociates, idToLocate);
 });
