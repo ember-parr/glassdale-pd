@@ -23,10 +23,12 @@ const addCriminalToDom = (aCriminalArray) => {
 //add alibi to their card
 const addAlibiToDom = (knownAssociates, id) => {
   const placeOnDom = document.getElementById("knownAssociates--" + id);
+  const theButton = document.getElementById("associates--" + id);
   let HTMLArray = knownAssociates.map((singleAssociate) => {
     return CriminalAlibiHTML(singleAssociate);
   });
   placeOnDom.innerHTML = HTMLArray.join("");
+  theButton.style.display = "none";
 };
 
 //start of event hubs
@@ -73,15 +75,3 @@ eventHub.addEventListener("click", (event) => {
   }
   addAlibiToDom(foundAssociates, idToLocate);
 });
-
-// eventHub.addEventListener("click", (clickEvent) => {
-//   if (clickEvent.target.textContent === "Associate Alibis") {
-//     const contentTarget = document.querySelector(`#${clickEvent.target.id}`);
-//     const [btntag, criminalID] = clickEvent.target.id.split("--");
-//     criminalArray[parseInt(criminalID) - 1].known_associates.forEach(
-//       (associate) => {
-//         alert(`Associate: ${associate.name}, Alibi: ${associate.alibi}`);
-//       }
-//     );
-//   }
-// });
