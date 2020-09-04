@@ -10,6 +10,6 @@ OfficersList();
 NoteForm();
 NotesList();
 
-window.onload = function () {
-  document.querySelector(".filters__officer").style.display = "none";
-};
+// window.onload = function () {
+//   document.querySelector(".filters__officer").style.display = "none";
+// };

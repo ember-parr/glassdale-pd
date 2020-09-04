@@ -43,7 +43,7 @@ eventHub.addEventListener("crimeChosen", (event) => {
     });
     console.log("Matching Criminals: ", matchingCriminals);
     addCriminalToDom(matchingCriminals);
-    document.querySelector(".filters__officer").style.display = "block";
+    document.querySelector(".filters__officer").value = "0";
   }
 });
 
@@ -65,14 +65,12 @@ let found = [];
 let foundAssociates = [];
 let idToLocate;
 eventHub.addEventListener("click", (event) => {
-  if (event.target.class === "criminalsContainer") {
+  if (event.target.id.startsWith("associates--")) {
     const [prefix, criminalId] = event.target.id.split("--");
     found = criminalArray.find((criminal) => criminal.id == criminalId);
     foundAssociates = found.known_associates;
     idToLocate = found.id;
     console.table(found.known_associates);
     addAlibiToDom(foundAssociates, idToLocate);
-  } else {
-    console.log("this isn't working....");
   }
 });
