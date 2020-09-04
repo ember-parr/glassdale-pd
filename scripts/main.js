@@ -9,3 +9,7 @@ CrimesList();
 OfficersList();
 NoteForm();
 NotesList();
+
+window.onload = function () {
+  document.querySelector(".filters__officer").style.display = "none";
+};
