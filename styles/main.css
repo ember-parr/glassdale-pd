@@ -1,5 +1,6 @@
 @import "notesSidebar.css";
 @import "criminals.css";
+@import "alibi.css";
 
 .filters {
   display: flex;
@@ -23,7 +24,7 @@
 
 .section-main {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   margin: 1em;
   flex-basis: 5;
 }
