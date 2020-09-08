@@ -8,7 +8,6 @@ export const AlibiList = () => {
   getWitnesses().then(() => {
     alibiArray = useWitnesses();
     addAllAlibisToDom(alibiArray);
-    render(alibiArray);
   });
 };
 
