@@ -1,5 +1,6 @@
 @import "notesSidebar.css";
 @import "criminals.css";
+@import "alibi.css";
 
 .filters {
   display: flex;
@@ -23,16 +24,18 @@
 
 .section-main {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   margin: 1em;
   flex-basis: 5;
 }
 
-/* .dropdown-menu {
+.dropdown-menu {
   flex: 3;
   display: flex;
   margin: 1em;
-} */
+  justify-content: space-around;
+  align-content: space-around;
+}
 
 header {
   display: flex;

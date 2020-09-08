@@ -4,7 +4,8 @@
   flex-flow: row wrap;
   margin: 1em;
   height: auto;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-content: flex-start;
 }
 
 .card-criminal {
