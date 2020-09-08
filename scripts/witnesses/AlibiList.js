@@ -23,13 +23,15 @@ const addAllAlibisToDom = (anArrayOfAlibis) => {
 eventHub.addEventListener("click", (event) => {
   if (event.target.id === "showAlibiButton") {
     if (document.querySelector(".alibiContainer").style.display === "none") {
-      document.querySelector(".alibiContainer").style.display = "block";
+      document.querySelector(".alibiContainer").style.display = "flex";
       document.querySelector("#showAlibiButton").innerHTML = "Hide Alibi List";
+      document.querySelector(".criminalsContainer").style.display = "none";
     } else if (
-      document.querySelector(".alibiContainer").style.display === "block"
+      document.querySelector(".alibiContainer").style.display === "flex"
     ) {
       document.querySelector(".alibiContainer").style.display = "none";
       document.querySelector("#showAlibiButton").innerHTML = "Show Alibi List";
+      document.querySelector(".criminalsContainer").style.display = "flex";
     } else {
       console.log("You have an issue in alibilist js file");
     }

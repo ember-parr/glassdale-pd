@@ -61,15 +61,13 @@ const addAlibiToDom = (knownAssociates, id) => {
 };
 
 // show the damn known associates!
-let found = [];
-let foundAssociates = [];
-let idToLocate;
+
 eventHub.addEventListener("click", (event) => {
   if (event.target.id.startsWith("associates--")) {
     const [prefix, criminalId] = event.target.id.split("--");
-    found = criminalArray.find((criminal) => criminal.id == criminalId);
-    foundAssociates = found.known_associates;
-    idToLocate = found.id;
+    let found = criminalArray.find((criminal) => criminal.id == criminalId);
+    let foundAssociates = found.known_associates;
+    let idToLocate = found.id;
     console.table(found.known_associates);
     addAlibiToDom(foundAssociates, idToLocate);
   }

@@ -29,11 +29,13 @@
   flex-basis: 5;
 }
 
-/* .dropdown-menu {
+.dropdown-menu {
   flex: 3;
   display: flex;
   margin: 1em;
-} */
+  justify-content: space-around;
+  align-content: space-around;
+}
 
 header {
   display: flex;
