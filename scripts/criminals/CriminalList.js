@@ -20,17 +20,6 @@ const addCriminalToDom = (aCriminalArray) => {
   domElemenet.innerHTML = HTMLArray.join("");
 };
 
-//add alibi to their card
-const addAlibiToDom = (knownAssociates, id) => {
-  const placeOnDom = document.getElementById("knownAssociates--" + id);
-  const theButton = document.getElementById("associates--" + id);
-  let HTMLArray = knownAssociates.map((singleAssociate) => {
-    return CriminalAlibiHTML(singleAssociate);
-  });
-  placeOnDom.innerHTML = HTMLArray.join("");
-  theButton.style.display = "none";
-};
-
 //start of event hubs
 const eventHub = document.querySelector(".container");
 let crimeThatWasSelected;
@@ -59,6 +48,17 @@ eventHub.addEventListener("officerChosen", (event) => {
     addCriminalToDom(matchingCriminals);
   }
 });
+
+//add alibi to their card
+const addAlibiToDom = (knownAssociates, id) => {
+  const placeOnDom = document.getElementById("knownAssociates--" + id);
+  const theButton = document.getElementById("associates--" + id);
+  let HTMLArray = knownAssociates.map((singleAssociate) => {
+    return CriminalAlibiHTML(singleAssociate);
+  });
+  placeOnDom.innerHTML = HTMLArray.join("");
+  theButton.style.display = "none";
+};
 
 // show the damn known associates!
 let found = [];

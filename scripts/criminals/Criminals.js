@@ -22,22 +22,6 @@ export const CriminalHTML = (criminalObj) => {
   return placeCriminalOnDom;
 };
 
-// const eventHub = document.querySelector(".criminalsContainer");
-// let knownAssociates = [];
-
-// eventHub.addEventListener("click", (event) => {
-//   if (event.target.id.startsWith("associates--")) {
-//     const [prefix, criminalName] = event.target.id.split("--");
-//     const customevent = new CustomEvent("alibiClicked", {
-//       detail: {
-//         nameOfCriminalClicked: criminalName,
-//       },
-//     });
-//     console.log("name of criminal clicked: ", criminalName);
-//     eventHub.dispatchEvent(customevent);
-//   }
-// });
-
 export const CriminalAlibiHTML = (associateObj) => {
   const placeCriminalOnDom = `
           <h5>Known Associate: ${associateObj.name}</h5>
