@@ -12,6 +12,6 @@ NoteForm();
 NotesList();
 AlibiList();
 
-// window.onload = function () {
-//   document.querySelector(".filters__officer").style.display = "none";
-// };
+window.onload = function () {
+  document.querySelector(".alibiContainer").style.display = "none";
+};
