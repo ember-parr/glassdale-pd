@@ -23,7 +23,8 @@ eventHub.addEventListener("click", (event) => {
   if (event.target.id === "showAlibiButton") {
     if (document.querySelector(".alibiContainer").style.display === "none") {
       document.querySelector(".alibiContainer").style.display = "flex";
-      document.querySelector("#showAlibiButton").innerHTML = "Hide Alibi List";
+      document.querySelector("#showAlibiButton").innerHTML =
+        "Give me back the criminals!";
       document.querySelector(".criminalsContainer").style.display = "none";
     } else if (
       document.querySelector(".alibiContainer").style.display === "flex"
