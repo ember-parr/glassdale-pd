@@ -3,7 +3,7 @@ export const NotesHTML = (noteObj) => {
   
     <section class="card-note">
         <p>${noteObj.noteText}</p>
-        <p class="suspect">Suspect: ${noteObj.suspect}</p>
+        <p class="suspect">Suspect: ${noteObj.suspectObj.name}</p>
         <p class="caption">Date: ${new Date(noteObj.date).toLocaleDateString(
           "en-US"
         )}</p>
