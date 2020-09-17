@@ -35,11 +35,7 @@ eventHub.addEventListener("click", (clickEvent) => {
 });
 
 const render = (criminalArray) => {
-  const criminalNames = criminalArray.map((criminalObj) => {
-    let criminalNameInArray = criminalObj.name;
-    return criminalNameInArray;
-  });
-  const sortedArray = criminalNames.sort();
+
   contentTarget.innerHTML = `
     <hr>
     <section class="noteFormContainer">
@@ -48,9 +44,9 @@ const render = (criminalArray) => {
         <textarea id="noteForm--text" placeholder="Type Here"></textarea><br>
         <select class="dropdown" id="noteForm--criminal">
                 <option value="0">Please select a criminal</option>
-                ${sortedArray
+                ${criminalArray
                   .map((criminalObject) => {
-                    return `<option value="${criminalObject}">${criminalObject}</option>`;
+                    return `<option value="${criminalObject.id}">${criminalObject.name}</option>`;
                   })
                   .join("")}
             </select>
