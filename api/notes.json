@@ -3,62 +3,80 @@
     {
       "noteText": "I Love to Post Notes",
       "date": "Sept 2",
-      "suspect": "Tom Cat",
+      "suspect": 72,
       "id": 1
     },
     {
       "noteText": "homie has toooo many different alibi stories!",
-      "suspect": "Arno Howe",
+      "suspect": 72,
       "date": 1599150543873,
       "id": 2
     },
     {
       "noteText": "bueller... bueller....",
-      "suspect": "Annie Pfeffer",
+      "suspect": 32,
       "date": 1599152032461,
       "id": 3
     },
     {
       "noteText": "I think this all works PERFECTLY... yaaaaaasssss",
-      "suspect": "Dolly Monahan",
+      "suspect": 84,
       "date": 1599157921270,
       "id": 4
     },
     {
       "noteText": "hello\nI am\ntrying\nto\nsee\nif\nit\nwill\nsave\nentered\nline\nbreaks",
-      "suspect": "Amanda Hermann",
+      "suspect": 76,
       "date": 1599160352026,
       "id": 5
     },
     {
       "noteText": "howdy doody",
-      "suspect": "Arne Hills",
+      "suspect": 31,
       "date": 1599165392798,
       "id": 6
     },
     {
       "noteText": "beep boop",
-      "suspect": "Annie Pfeffer",
+      "suspect": 4,
       "date": 1599165550312,
       "id": 7
     },
     {
       "noteText": "anotha one",
-      "suspect": "Mariah Mohr",
+      "suspect": 28,
       "date": 1599167431720,
       "id": 8
     },
     {
       "noteText": "so many alibi's... so little time. ",
-      "suspect": "Clair Romaguera",
+      "suspect": 15,
       "date": 1599193328211,
       "id": 9
     },
     {
       "noteText": "mr.steuber was super rude during questioning. talk to his mother about his poor attitude. ",
-      "suspect": "17",
+      "suspect": 17,
       "date": 1600376524225,
       "id": 10
+    },
+    {
+      "noteText": "should save criminal id as int rather than string w/ a number",
+      "suspect": 8,
+      "date": 1600377749294,
+      "id": 11
+    },
+    {
+      "noteText": "testing render features when fetching suspect name from api -- shld show loy gibson",
+      "suspect": 21,
+      "date": 1600379229621,
+      "id": 12
+    },
+    {
+      "noteText": "testing again with Taurean Bins this time",
+      "suspect": 7,
+      "date": 1600379325765,
+      "id": 13
     }
   ]
 }

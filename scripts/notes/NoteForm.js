@@ -24,7 +24,7 @@ eventHub.addEventListener("click", (clickEvent) => {
     } else {
       const newNote = {
         noteText: noteContent.value,
-        suspect: noteCriminal.value,
+        suspect: parseInt(noteCriminal.value),
         date: Date.now(),
       };
       clearNotesForm();
