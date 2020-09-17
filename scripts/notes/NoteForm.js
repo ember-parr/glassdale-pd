@@ -35,22 +35,7 @@ eventHub.addEventListener("click", (clickEvent) => {
 });
 
 const render = (criminalArray) => {
-  // const sortByName = criminalArray.sort(function(x,y) {
-  //   let crimX = x[0].name;
-  //   let crimY = y[0].name;
-  //   let compare = (x,y) => {
-  //     return x>y ? 1:-1;
-  //   }
-  //   return compare(crimX, crimY)
-  // })
 
-  // console.log(sortByName)
-
-  // const criminalNames = criminalArray.map((criminalObj) => {
-  //   let criminalNameInArray = criminalObj.name;
-  //   return criminalNameInArray;
-  // });
-  // const sortedArray = criminalNames.sort();
   contentTarget.innerHTML = `
     <hr>
     <section class="noteFormContainer">
