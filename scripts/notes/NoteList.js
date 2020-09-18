@@ -5,11 +5,8 @@ import { getNotes, useNotes } from "./NoteProvider.js";
 import { NotesHTML } from "./Note.js";
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
 
-
 const domElement = document.querySelector(".notesList")
 const eventHub = document.querySelector(".container");
-
-
 
 export const NotesList = () => {
   getNotes()
@@ -26,8 +23,6 @@ eventHub.addEventListener("noteStateChanged", () => {
   render(newNotes, useCriminals())
 })
 
-//below this line i am trying to make a filter for suspects in the notes list
-
 const render = (notesCollection, suspects) => {
   domElement.innerHTML = notesCollection.map((noteObject)=> {
     noteObject.suspectObj = suspects.find(suspect => {
@@ -38,31 +33,22 @@ const render = (notesCollection, suspects) => {
   .join("")
 };
 
-// const eventHub = document.querySelector("#asideForNotes");
+eventHub.addEventListener("click", clickEvent => {
+  if (clickEvent.target.id.startsWith("deleteNote--")) {
+      const [prefix, id] = clickEvent.target.id.split("--")
 
-// eventHub.addEventListener("change", (event) => {
-//   if (event.target.id === "asideForNotes") {
-//     const customEvent = new CustomEvent("suspectChosen", {
-//       detail: {
-//         suspectThatWasChosen: event.target.value,
-//       },
-//     });
-//     console.log("suspect chosen: ", customEvent.detail.suspectThatWasChosen);
-//     eventHub.dispatchEvent(customEvent);
-//   }
-// });
+      /*
+          Invoke the function that performs the delete operation.
 
-// let suspectThatWasSelected;
-// eventHub.addEventListener("suspectChosen", (event) => {
-//   suspectThatWasSelected = event.detail.suspectThatWasChosen;
-//   if (event.detail.suspectThatWasChosen !== "0") {
-//     const matchingSuspect = notesArray.filter((currentNote) => {
-//       return currentNote.suspect === event.detail.suspectThatWasChosen;
-//     });
-//     addNotesToDom(matchingSuspect);
-//   } else if (event.detail.suspectThatWasChosen === "0") {
-//     addNotesToDom(notesArray);
-//   } else {
-//     console.log("error with eventHub line 62 and beyond");
-//   }
-// });
+          Once the operation is complete you should THEN invoke
+          useNotes() and render the note list again.
+      */
+     deleteNote(id).then(
+         () => {
+             const updatedNotes = useNotes()
+             const criminals = useCriminals()
+             render(updatedNotes, criminals)
+         }
+     )
+  }
+})
