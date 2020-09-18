@@ -37,6 +37,8 @@ export const saveNote = (noteObj) => {
     },
     body: JSON.stringify(noteObj),
   })
-    .then(getNotes())
+    .then(() => {
+      return getNotes()
+    })
     .then(dispatchStateChangeEvent);
 };
