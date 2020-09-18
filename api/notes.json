@@ -1,22 +1,10 @@
 {
   "notes": [
     {
-      "noteText": "I Love to Post Notes",
-      "date": "Sept 2",
-      "suspect": 72,
-      "id": 1
-    },
-    {
       "noteText": "homie has toooo many different alibi stories!",
       "suspect": 72,
       "date": 1599150543873,
       "id": 2
-    },
-    {
-      "noteText": "bueller... bueller....",
-      "suspect": 32,
-      "date": 1599152032461,
-      "id": 3
     },
     {
       "noteText": "I think this all works PERFECTLY... yaaaaaasssss",
@@ -43,12 +31,6 @@
       "id": 7
     },
     {
-      "noteText": "anotha one",
-      "suspect": 28,
-      "date": 1599167431720,
-      "id": 8
-    },
-    {
       "noteText": "so many alibi's... so little time. ",
       "suspect": 15,
       "date": 1599193328211,
@@ -61,70 +43,16 @@
       "id": 10
     },
     {
-      "noteText": "should save criminal id as int rather than string w/ a number",
-      "suspect": 8,
-      "date": 1600377749294,
-      "id": 11
-    },
-    {
-      "noteText": "testing render features when fetching suspect name from api -- shld show loy gibson",
-      "suspect": 21,
-      "date": 1600379229621,
-      "id": 12
-    },
-    {
-      "noteText": "testing again with Taurean Bins this time",
-      "suspect": 7,
-      "date": 1600379325765,
-      "id": 13
-    },
-    {
       "noteText": "hello from the other side",
       "suspect": 41,
       "date": 1600448174014,
       "id": 14
     },
     {
-      "noteText": "hello from that side over there",
-      "suspect": 46,
-      "date": 1600448341630,
-      "id": 15
-    },
-    {
-      "noteText": "eventhub moved",
-      "suspect": 12,
-      "date": 1600448452130,
-      "id": 16
-    },
-    {
-      "noteText": "commented out a LOT Of stuff",
-      "suspect": 10,
-      "date": 1600448768767,
-      "id": 17
-    },
-    {
       "noteText": "howdy doody",
       "suspect": 18,
       "date": 1600448861121,
       "id": 18
-    },
-    {
-      "noteText": "auto show new note?",
-      "suspect": 58,
-      "date": 1600448966591,
-      "id": 19
-    },
-    {
-      "noteText": "arg what is happeninggggg",
-      "suspect": 21,
-      "date": 1600453450487,
-      "id": 20
-    },
-    {
-      "noteText": "okay but... why?",
-      "suspect": 18,
-      "date": 1600453466575,
-      "id": 21
     }
   ]
 }

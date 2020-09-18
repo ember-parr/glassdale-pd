@@ -33,6 +33,13 @@ const render = (notesCollection, suspects) => {
   .join("")
 };
 
+const deleteNote = (noteId) => {
+  return fetch(`http://localhost:8088/notes/${noteId}`, {
+      method: "DELETE"
+  })
+      .then(getNotes)
+}
+
 eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id.startsWith("deleteNote--")) {
       const [prefix, id] = clickEvent.target.id.split("--")
