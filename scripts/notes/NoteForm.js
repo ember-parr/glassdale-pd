@@ -1,4 +1,5 @@
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
+import { EditNoteForm } from "./EditNote.js";
 import { saveNote } from "./NoteProvider.js";
 
 /*
@@ -29,8 +30,12 @@ eventHub.addEventListener("click", (clickEvent) => {
       clearNotesForm();
       saveNote(newNote);
     }
+  } else if (clickEvent.target.id.startsWith("editNote")) {
+    const [prefix, id, sus] = clickEvent.target.id.split("--");
+    EditNoteForm(id, sus)
   }
 });
+
 
 const render = (criminalArray) => {
 
