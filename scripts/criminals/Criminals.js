@@ -1,4 +1,4 @@
-export const CriminalHTML = (criminalObj) => {
+export const CriminalHTML = (criminalObj, facilities) => {
   const placeCriminalOnDom = `
     <section id="criminal-${criminalObj.id}" class="card-criminal">
         <h3>${criminalObj.name}</h3>
@@ -11,6 +11,12 @@ export const CriminalHTML = (criminalObj) => {
           criminalObj.incarceration.end
         ).toLocaleDateString("en-US")}</p>
         <p>Arresting Officer: ${criminalObj.arrestingOfficer}</p>
+        <div>
+          <h4>Facilities</h4>
+          <ul>
+            ${facilities.map(f => `<li>${f.facilityName}</li>`).join("")}
+          </ul>
+        </div>
         <button class="knownAssociatesBtn" id="associates--${
           criminalObj.id
         }">Associate Alibis</button>
