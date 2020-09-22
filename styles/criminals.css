@@ -19,7 +19,7 @@
   flex-basis: 25%;
 }
 
-.card-criminal p {
+.card-criminal p li{
   font-size: 12px;
   line-height: 1;
   margin: 0.01;
