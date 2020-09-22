@@ -43,4 +43,22 @@ export const saveNote = (noteObj) => {
     .then(dispatchStateChangeEvent);
 };
 
+export const editNote = (noteObj, noteId) => {
+  return fetch(`http://localhost:8088/notes/${noteId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(noteObj)
+  })
+  .then(()=> {
+    return getNotes()
+  })
+  .then(dispatchStateChangeEvent)
+}
 
+
+export const getSingleNote = (id) => {
+  return fetch(`http://localhost:8088/notes/${id}`)
+  .then(response=>response.json)
+}
