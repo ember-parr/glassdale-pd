@@ -22,9 +22,9 @@ export const CriminalList = () => {
 
           // Pass all three collections of data to render()
           render(criminals, facilities, crimFac)
+          
       }
   )
-  console.log("criminals: ", criminals)
 };
 
 const contentTarget = document.querySelector(".criminalsContainer");
@@ -41,6 +41,7 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
           return CriminalHTML(criminalObject, facilities)
       }
   ).join("")
+  // console.log("crimFac: ", crimFac)
 }
 
 
@@ -55,7 +56,6 @@ eventHub.addEventListener("crimeChosen", (event) => {
     const matchingCriminals = criminals.filter((currentCriminal) => {
       return currentCriminal.conviction === event.detail.crimeThatWasChosen;
     });
-    console.log("Matching Criminals: ", matchingCriminals);
     render(matchingCriminals, facilities, crimFac);
     document.querySelector(".filters__officer").value = "0";
   }
@@ -92,7 +92,6 @@ eventHub.addEventListener("click", (event) => {
     let found = criminals.find((criminal) => criminal.id == criminalId);
     let foundAssociates = found.known_associates;
     let idToLocate = found.id;
-    console.table(found.known_associates);
     addAlibiToDom(foundAssociates, idToLocate);
   }
 });
