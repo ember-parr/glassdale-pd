@@ -23,12 +23,12 @@
   }
 
   .card-facility {
-    border: 0.5px solid lightseagreen;
+    border: 0.5px solid grey;
+    background: lightsteelblue;
     margin: 0.5em;
     padding: 0.25em;
     min-width: 175px;
     max-width: 300px;
     min-height: 100px;
-    max-height: 150px;
     /* flex-basis: 25%; */
   }

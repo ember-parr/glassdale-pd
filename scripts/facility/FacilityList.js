@@ -22,7 +22,6 @@ const addFacilitiesToDom = (anArrayOfFacilities) => {
     const contentElement = document.querySelector(".facilityContainer");
     let HTMLRender = anArrayOfFacilities.map((singleFacility)=> {
         let matchingCriminalsInFacility = allCrimFac.filter(facility=> facility.facilityId === singleFacility.id)
-        console.log("matching Criminals In Facility: ", matchingCriminalsInFacility)
         return FacilityHTML(singleFacility, matchingCriminalsInFacility);
     });
     contentElement.innerHTML=HTMLRender.join("");

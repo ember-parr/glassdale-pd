@@ -1,17 +1,21 @@
 import {useCriminalFacilities, getCriminalFacilities } from "./CriminalFacilityProvider.js"
 import {getCriminals, useCriminals} from '../criminals/CriminalProvider.js'
 import { CriminalList } from "../criminals/CriminalList.js";
+ 
 
-let criminals = [];
 
-const criminalListToMap = () => {
+const criminalListToMap = (criminalFacilityArray) => {
+    let criminals = [];
     getCriminals()
     .then(()=> {
         criminals = useCriminals();
-        // console.log("criminals from dom js: ", criminals)
+        let criminalList = criminalFacilityArray.map(cf => {
+            const matchingCriminalObjects = criminals.find(criminal => criminal.id === cf.criminalId)
+            return matchingCriminalObjects
+        })
+        return criminalList
     })
-        return criminals
-    
+            
 }
 
 const findCorrectCriminals = () => {
@@ -20,15 +24,8 @@ const findCorrectCriminals = () => {
 
 
 export const FacilityHTML = (facilityObj, criminalArray) => {
-    let allCriminals = criminalListToMap();
-    console.log("all criminals after function run: ", allCriminals)
-    // console.log("matching crims from html element: ", criminalArray)
-    let criminalsInFacility = [];
-    // criminalsInFacility = criminalArray.map( chosenCriminal => {
-    //     const matchingCriminals = allCriminals.filter(criminal => criminal.id === chosenCriminal.id)
-    //     return criminalsInFacility.push(matchingCriminals)
-    // })
-    // console.log("find matching criminals: ", criminalsInFacility)
+    let mappedCriminals = criminalListToMap(criminalArray)
+    console.log("mapped criminal's: ", criminalArray)
     const placeFacilitiesOnDom = `
     <div class="card-facility">     
     <h4>${facilityObj.facilityName}</h4>
@@ -36,9 +33,9 @@ export const FacilityHTML = (facilityObj, criminalArray) => {
     <p>Capacity: ${facilityObj.capacity}</p>
     <h5>Criminals:</p>
     <ul>
+        ${criminalArray.map(cN => `<li>${cN.criminal.name}`)}
     </ul>
     </div>
     `;
     return placeFacilitiesOnDom;
 };
-// ${criminalsInFacility.map(c => `<li>${c}</li>`).join("")}
