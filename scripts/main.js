@@ -4,7 +4,7 @@ import { CrimesList } from "./convictions/ConvictionSelect.js";
 import { NoteForm } from "./notes/NoteForm.js";
 import { NotesList } from "./notes/NoteList.js";
 import { AlibiList } from "./witnesses/AlibiList.js";
-import { FacilityList } from "./facility/FacilityList.js"
+import { FacilityList } from "./facility/FacilityList.js";
 
 CriminalList();
 CrimesList();

@@ -22,9 +22,9 @@ export const CriminalList = () => {
 
           // Pass all three collections of data to render()
           render(criminals, facilities, crimFac)
+          console.log("criminals: ", criminals)
       }
   )
-  console.log("criminals: ", criminals)
 };
 
 const contentTarget = document.querySelector(".criminalsContainer");
@@ -41,6 +41,7 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
           return CriminalHTML(criminalObject, facilities)
       }
   ).join("")
+  console.log("crimFac: ", crimFac)
 }
 
 

@@ -1,11 +1,18 @@
+import { getCriminalFacilities, useCriminalFacilities } from "./CriminalFacilityProvider.js";
 import {FacilityHTML} from "./FacilitiesOnDom.js";
 import { useFacilities, getFacilities } from "./FacilityProvider.js";
+
+let allCrimFac = []
+
 
 let facilityArray = [];
 const eventHub = document.querySelector(".container");
 
 export const FacilityList = () => {
-    getFacilities().then(() => {
+    getFacilities()
+    .then(getCriminalFacilities)
+    .then(() => {
+        allCrimFac = useCriminalFacilities();
         facilityArray = useFacilities();
         addFacilitiesToDom(facilityArray);
     });
@@ -14,7 +21,9 @@ export const FacilityList = () => {
 const addFacilitiesToDom = (anArrayOfFacilities) => {
     const contentElement = document.querySelector(".facilityContainer");
     let HTMLRender = anArrayOfFacilities.map((singleFacility)=> {
-        return FacilityHTML(singleFacility);
+        let matchingCriminalsInFacility = allCrimFac.filter(facility=> facility.facilityId === singleFacility.id)
+        console.log("matching Criminals In Facility: ", matchingCriminalsInFacility)
+        return FacilityHTML(singleFacility, matchingCriminalsInFacility);
     });
     contentElement.innerHTML=HTMLRender.join("");
 };
